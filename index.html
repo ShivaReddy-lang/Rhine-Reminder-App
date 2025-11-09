@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Rhine Reminder App — Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="bgMotion"></div>
+
+  <nav class="topbar">
+    <div class="brand">Rhine Reminder App</div>
+    <div class="nav-actions">
+      <button onclick="location.href='about.html'">About</button>
+      <button class="primary" onclick="location.href='dashboard.html'">Dashboard</button>
+    </div>
+  </nav>
+
+  <main class="page login-page" id="loginPage">
+    <section class="login-card card" style="margin-top:48px;">
+      <h2 style="margin:0 0 14px 0">Welcome back</h2>
+      <p class="muted">Sign in to access your reminders</p>
+
+      <div style="margin-top:18px">
+        <input id="email" class="input-large" type="email" placeholder="Email" autocomplete="username">
+        <input id="password" class="input-large" type="password" placeholder="Password" autocomplete="current-password">
+        <div class="row" style="margin-top:12px">
+          <button id="emailSignUp" class="btn-big">Sign up</button>
+          <button id="emailSignIn" class="btn-big" style="background:#7b8b98">Sign in</button>
+        </div>
+
+        <div style="height:18px"></div>
+        <div style="text-align:center;color:var(--muted)">or</div>
+        <div style="height:12px"></div>
+
+        <button id="googleSignIn" class="btn-big" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text-dark)">Continue with Google</button>
+      </div>
+    </section>
+  </main>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-messaging-compat.js"></script>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

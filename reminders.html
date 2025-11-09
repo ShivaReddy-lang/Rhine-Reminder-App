@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Rhine Reminder App — Reminders</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="bgMotion"></div>
+  <nav class="topbar">
+    <div class="brand">Rhine Reminder App</div>
+    <div class="nav-actions">
+      <button onclick="location.href='dashboard.html'">Dashboard</button>
+      <button id="logout2" class="primary">Logout</button>
+    </div>
+  </nav>
+
+  <main class="container page" id="remindersPage">
+    <aside class="sidebar card">
+      <h4>Filters</h4>
+      <div style="margin-top:12px">
+        <label><input type="checkbox" id="showSent"> Show sent</label>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="card">
+        <h3>All reminders</h3>
+        <div id="remindersList" class="grid"></div>
+      </div>
+    </section>
+  </main>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

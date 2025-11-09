@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Rhine Reminder App — Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="bgMotion"></div>
+  <nav class="topbar">
+    <div class="brand">Rhine Reminder App</div>
+    <div class="nav-actions">
+      <button id="aboutBtn">About</button>
+      <button id="logoutBtn" class="primary">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container page" id="dashboardPage">
+    <aside class="sidebar">
+      <div style="margin-bottom:12px"><button id="openReminders" class="btn-big">My Reminders</button></div>
+      <div class="card">
+        <h4>Quick actions</h4>
+        <button id="newReminderBtn" class="btn-big" style="width:100%;margin-top:8px">+ New Reminder</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div id="addPanel" class="card" hidden>
+        <h3>New Reminder</h3>
+        <input id="rText" class="input-large" placeholder="Reminder text">
+        <div class="datetime-wrapper" style="margin-top:8px;position:relative;">
+          <div class="fake" id="fakeDate">Choose date & time</div>
+          <input id="rDate" type="datetime-local">
+        </div>
+        <div style="margin-top:12px" class="row">
+          <button id="saveRem" class="btn-big">Save</button>
+          <button id="cancelRem" class="btn-big" style="background:#7b8b98">Cancel</button>
+        </div>
+      </div>
+
+      <div id="preview" class="card">
+        <h3>Your upcoming reminders</h3>
+        <div id="remindersPreview" class="grid"></div>
+      </div>
+    </main>
+  </div>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

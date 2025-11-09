@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About — Rhine Reminder App</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="bgMotion"></div>
+  <nav class="topbar">
+    <div class="brand">Rhine Reminder App</div>
+    <div class="nav-actions">
+      <a href="dashboard.html"><button>Dashboard</button></a>
+      <button id="logoutAbout" class="primary">Logout</button>
+    </div>
+  </nav>
+
+  <main class="container page" style="grid-template-columns:1fr;">
+    <section class="card" style="margin:36px auto;max-width:900px">
+      <h2>About Rhine Reminder App</h2>
+      <p>This app uses Firebase Authentication, Firestore and Firebase Cloud Messaging (FCM) to provide cross-device push notifications.</p>
+      <h3>How it works</h3>
+      <ol>
+        <li>User signs in and grants notification permission.</li>
+        <li>Client saves reminders to Firestore with a timestamp.</li>
+        <li>Cloud Function scans reminders and sends FCM when due.</li>
+      </ol>
+    </section>
+  </main>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

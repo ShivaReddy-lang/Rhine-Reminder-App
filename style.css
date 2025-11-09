@@ -1,0 +1,41 @@
+/* style.css — melancholy + calm theme */
+:root{
+  --bg-a:#d7dbe8;
+  --bg-b:#c6d7e5;
+  --accent:#5f7a8a;
+  --muted:#8b97a6;
+  --glass: rgba(255,255,255,0.12);
+  --card: rgba(22,28,34,0.06);
+  --text-dark:#0f1722;
+}
+*{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+html,body{height:100%;margin:0;background:linear-gradient(120deg,var(--bg-a),var(--bg-b));color:var(--text-dark);overflow-x:hidden}
+#bgMotion{position:fixed;inset:0;z-index:-2;background:linear-gradient(60deg, rgba(150,150,200,0.12), rgba(160,190,200,0.12), rgba(180,160,190,0.12));filter:blur(40px) saturate(120%);animation:bgShift 18s ease-in-out infinite}
+@keyframes bgShift{0%{transform:translateX(-10%)}50%{transform:translateX(10%)}100%{transform:translateX(-10%)}}
+.topbar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;padding:16px 28px;backdrop-filter: blur(6px);background: rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.04)}
+.brand{font-weight:700;letter-spacing:0.4px}
+.nav-actions button{margin-left:10px;padding:8px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;cursor:pointer}
+.nav-actions button.primary{background:var(--accent);color:white;border:none;box-shadow:0 6px 18px rgba(95,122,138,0.12);font-weight:600;padding:10px 16px}
+.container{max-width:1200px;margin:36px auto;padding:0 20px;display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start}
+.sidebar{background:var(--glass);padding:18px;border-radius:16px;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(15,20,34,0.06);transform:translateX(-20px);opacity:0;animation:enterLeft .8s .12s forwards}
+.content{min-height:60vh}
+@keyframes enterLeft{to{transform:none;opacity:1}}
+.btn-big{display:inline-block;padding:14px 18px;border-radius:14px;background:linear-gradient(180deg,var(--accent), #496a76);color:#fff;border:none;font-weight:700;font-size:1rem;cursor:pointer;box-shadow:0 12px 30px rgba(20,30,40,0.08)}
+.btn-big:active{transform:translateY(1px)}
+.card{background:rgba(255,255,255,0.04);padding:18px;border-radius:14px;backdrop-filter:blur(6px);box-shadow:0 12px 30px rgba(20,30,40,0.04);margin-bottom:18px}
+.input-large{width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text-dark);font-size:1rem}
+.row{display:flex;gap:10px;align-items:center}
+.datetime-wrapper{display:flex;gap:8px;align-items:center}
+.datetime-wrapper .fake{padding:12px 14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);min-width:220px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;font-size:0.95rem;cursor:pointer}
+.datetime-wrapper input[type="datetime-local"]{opacity:0;position:absolute;pointer-events:none;height:0;width:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.reminder-card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 26px rgba(10,15,20,0.04);position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.reminder-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,15,20,0.08)}
+.reminder-time{display:block;color:var(--muted);font-size:0.9rem;margin-top:8px}
+.reminder-actions{position:absolute;top:12px;right:12px;display:flex;gap:8px}
+.page{opacity:0;transform:translateY(18px);transition:all .5s ease}
+.page.enter{opacity:1;transform:none}
+.fadeUp-delay{animation:fadeUp .6s .12s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.login-card{max-width:520px;padding:36px;border-radius:18px;background:rgba(255,255,255,0.04);box-shadow:0 20px 40px rgba(10,15,20,0.06);margin:40px auto}
+@media (max-width:880px){.container{grid-template-columns:1fr;padding:16px}.sidebar{order:2}.content{order:1}}
